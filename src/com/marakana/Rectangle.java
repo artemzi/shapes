@@ -4,7 +4,8 @@ package com.marakana;
  * Created by azinoviev on 25.11.13.
  */
 public class Rectangle {
-    private int width, height;
+    protected int width;
+	protected int height;
 
     public Rectangle(int width, int height) {
         this.width = width;

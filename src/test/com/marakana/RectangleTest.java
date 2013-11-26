@@ -10,11 +10,9 @@ import com.marakana.Rectangle;
 import com.marakana.Square;
 
 /** 
-* Rectangle Tester. 
+* Rectangle Tester.
 * 
-* @author artem 
-* @since <pre>nov 25, 2013</pre> 
-* @version 1.0 
+* simple spec test
 */
 public class RectangleTest {
 	
@@ -57,6 +55,9 @@ public class RectangleTest {
     public void SquaresMustBeSquares() {
         for (int i = 0; i < 1000000; i++) {
             Square s = arbitrarySquare();
+            int side = RNDM.nextInt(50);
+            s.setWidth(side);
+            assertEquals(side, s.getWidth());
             assertEquals(s.getWidth(), s.getHeight());
         }
     }

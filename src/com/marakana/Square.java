@@ -4,36 +4,23 @@ package com.marakana;
  * Created by azinoviev on 25.11.13.
  */
 public class Square extends Rectangle {
-    private int width, height;
 
-    public int getWidth() {
-        return width;
-    }
-
+	@Override
     public void setWidth(int width) {
-        this.width = width;
+		setSide(width);
     }
-
-    public int getHeight() {
-        return height;
-    }
-
+    
+	@Override
     public void setHeight(int height) {
-        this.height = height;
+		setSide(height);
     }
+	
+	private void setSide(int side) {
+        super.setWidth(side);
+        super.setHeight(side);
+	}
 
     public Square(int side) {
-        super(side);
-        this.height = this.width = side;
-    }
-
-    @Override
-    public int getArea() {
-        return super.getArea();
-    }
-
-    @Override
-    public int getPerimeter() {
-        return super.getPerimeter();
+        super(side, side);
     }
 }
