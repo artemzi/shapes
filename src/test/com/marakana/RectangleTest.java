@@ -63,7 +63,9 @@ public class RectangleTest {
     }
 
     private Rectangle arbitraryRectangle() {
-        return new Rectangle(RNDM.nextInt(), RNDM.nextInt());
+        return RNDM.nextBoolean() 
+        		? new Rectangle(RNDM.nextInt(), RNDM.nextInt())
+        		: arbitrarySquare();
     }
 
     private Square arbitrarySquare() {
