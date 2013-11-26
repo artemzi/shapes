@@ -41,24 +41,10 @@ public class RectangleTest {
     @Test
     public void setRectangleWidthShouldChangeOnlyWidth() {
         for (int i = 0; i < 1000000; i++) {
-            Rectangle r = arbitraryRectangle();
-            int
-            	width = RNDM.nextInt(50),
-            	height = r.getHeight();
-            r.setWidth(width);
-            assertEquals(width, r.getWidth());
-            assertEquals(height, r.getHeight());
-        }
-    }
-
-    @Test
-    public void SquaresMustBeSquares() {
-        for (int i = 0; i < 1000000; i++) {
-            Square s = arbitrarySquare();
-            int side = RNDM.nextInt(50);
-            s.setWidth(side);
-            assertEquals(side, s.getWidth());
-            assertEquals(s.getWidth(), s.getHeight());
+            Rectangle 
+            	r1 = arbitraryRectangle(),
+            	r2 = r1.copyWithWidth(RNDM.nextInt(50));
+            assertEquals(r1.getHeight(), r2.getHeight());
         }
     }
 
