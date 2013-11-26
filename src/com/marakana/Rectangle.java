@@ -43,23 +43,28 @@ public class Rectangle {
         return perimeter;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + height;
+		result = prime * result + width;
+		return result;
+	}
 
-        Rectangle rectangle = (Rectangle) o;
-
-        if (height != rectangle.height) return false;
-        if (width != rectangle.width) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = width;
-        result = 31 * result + height;
-        return result;
-    }
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (!(obj instanceof Rectangle))
+			return false;
+		Rectangle other = (Rectangle) obj;
+		if (height != other.height)
+			return false;
+		if (width != other.width)
+			return false;
+		return true;
+	}
 }
